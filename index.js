@@ -4,7 +4,8 @@ const shoppingCart = {
     addItem (newItem) {
         const {name: newItemName, price: newItemPrice, quantity: newItemQuantity} = newItem;
         if (!(newItemName &&
-            newItemPrice > 0)) {
+            newItemPrice > 0 &&
+             newItemQuantity)) {
             return;
         }
         const itemsLen = this.items.length;
