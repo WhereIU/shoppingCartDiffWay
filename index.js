@@ -45,30 +45,54 @@ const shoppingCart = {
 export default shoppingCart;
 
 // tests
-shoppingCart.addItem({
+
+// add first item
+shoppingCart.addItem({ 
     name: 'apple',
     price: 20,
     quantity: 1,
 });
 
+// change +quantity of existing item when adding
 shoppingCart.addItem({
     name: 'apple',
     price: 20,
     quantity: 5,
 });
+
+// add another name item
 shoppingCart.addItem({
     name: 'banana',
     price: 20,
     quantity: 5,
 });
+
+// add another price but same name item
 shoppingCart.addItem({
     name: "apple",
     price: 1,
     quantity: -10,
 });
+
+// change -quanity even to just delete item  
 shoppingCart.addItem({
     name: "apple",
     price: 20,
     quantity: -10,
 });
+
+shoppingCart.addItem ({
+    name: "for be deleted next step",
+    price: 999,
+    quantity: 1
+});
+
+// remove item with name and price out of adding method
+shoppingCart.removeItem("for be deleted next step", 999);
+
+// result cart
+console.log(shoppingCart);
+
+// clear cart
+shoppingCart.clearCart();
 console.log(shoppingCart);
