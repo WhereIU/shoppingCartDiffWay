@@ -48,7 +48,7 @@ const shoppingCart = {
         result.push(this.items[i]);
       } else {
         this.total -= this.items[i].quantity * itemPrice;
-      } // add every item back except for the one being deleted
+      } // add all elements back except the one being removed
     }
 
     this.items = [...result];
@@ -63,7 +63,7 @@ const shoppingCart = {
         this.items[i].quantity = newQuantity;
         return;
       }
-    } // if with that name and price item in then change quantity to new
+    } // if there is a product with the same name and price, change the quantity to a new one
   },
 
   calculateTotal() { return this.total; },
